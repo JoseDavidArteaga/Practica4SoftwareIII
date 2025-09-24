@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
     <title>Tienda de Videojuegos</title>
@@ -9,94 +10,198 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
 
-    <header>
-        <div class="container-fluid">
-            <div class="align-items-center">
-                <div class="profile-info">
-                    <h1>Ctrl+Play</h1>
-                    <h3>Todo en videojuegos y accesorios</h3>
-                    <p>Soy un@ Ingenier@ de Sistemas especializad@ en ...</p>
+  <body>
+        <header>
+          <div class="container-fluid">
+              <div class="align-items-center">
+                  <div class="profile-info">
+                      <h1>Ctrl+Play</h1>
+                      <h3>Todo en videojuegos y accesorios</h3>
+                      <p>Soy un@ Ingenier@ de Sistemas especializad@ en ...</p>
+                  </div>
+                  <div class="social-icons">
+                      <a href="" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                      <a href="" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                      <a href="" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                  </div>
+              </div>
+          </div>
+      </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">      
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#promociones">Promociones</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#productos">Productos</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#formulario">Sugerir Productos</a>
+              </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+      <!-- SECCIÓN 1: CARRUSEL PROMOCIONES -->
+      <section id="promociones" class="py-4">
+        <h1 class="text-center mb-4">Promociones Especiales</h1>
+        <div class="container bg-dark p-4 rounded shadow-sm">
+            <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner shadow-sm rounded">
+                <div class="carousel-item active">
+                <img src="img/BO7.webp" class="d-block w-50 mx-auto" alt="Oferta Call of Duty: Black Ops 7">
                 </div>
-                <div class="social-icons">
-                    <a href="" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                <div class="carousel-item">
+                <img src="img/GTA6.webp" class="d-block w-50 mx-auto" alt="Preventas Exclusivas GTA VI">
+                </div>
+                <div class="carousel-item">
+                <img src="img/Silksong.webp" class="d-block w-50 mx-auto" alt="Accesorios en Oferta Silksong">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+            </div>
+        </div>
+      </section>
+      
+      <section id="juegos" class="py-4 bg-light">
+        <div class="container">
+            <h2 class="mb-4">Juegos Destacados</h2>
+            <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                <img src="img/eldenring.jpg" class="card-img-top" alt="Elden Ring">
+                <div class="card-body">
+                    <h5 class="card-title">Elden Ring</h5>
+                    <p class="card-text">Explora un vasto mundo abierto lleno de desafíos y aventuras.</p>
+                    <a href="#" class="btn btn-primary">Comprar Ahora</a>
+                </div>
+              </div>
+        </div>
+      </section>
+
+ <section id="productos" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <aside class="col-sm-12 col-md-4 col-lg-3 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header text-center">
+                            <h4>Categorías</h4>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><a href="#" class="nav-link">Juegos Populares</a></li>
+                            <li class="list-group-item"><a href="#" class="nav-link">eTarjetas</a></li>
+                            <li class="list-group-item"><a href="#" class="nav-link">Juegos Móviles</a></li>
+                            <li class="list-group-item"><a href="#" class="nav-link">Próximos Lanzamientos</a></li>
+                        </ul>
+                    </div>
+                </aside>
+                
+                <div class="col-sm-12 col-md-8 col-lg-9">
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="https://via.placeholder.com/400x300?text=Producto+1" class="card-img-top img-fluid" alt="Producto 1">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Título Producto 1</h5>
+                                    <p class="card-text text-danger">$$$$</p>
+                                    <button class="btn btn-primary">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="https://via.placeholder.com/400x300?text=Producto+2" class="card-img-top img-fluid" alt="Producto 2">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Título Producto 2</h5>
+                                    <p class="card-text text-danger">$$$$</p>
+                                    <button class="btn btn-primary">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm">
+                                <img src="https://via.placeholder.com/400x300?text=Producto+3" class="card-img-top img-fluid" alt="Producto 3">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Título Producto 3</h5>
+                                    <p class="card-text text-danger">$$$$</p>
+                                    <button class="btn btn-primary">Agregar al Carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container-fluid">      
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li>  
-          <li class="nav-item">
-            <a class="nav-link" href="#promociones">Promociones</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#juegos">Juegos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#consolas">Consolas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#eTarjetas">eTarjetas</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-    <!-- SECCIÓN 1: CARRUSEL PROMOCIONES -->
-    <section id="promociones" class="py-4">
-      <div class="container">
-          <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner shadow-sm rounded">
-              <div class="carousel-item active">
-              <img src="img/BO7.webp" class="d-block w-100" alt="Oferta Call of Duty: Black Ops 7">
-              </div>
-              <div class="carousel-item">
-              <img src="img/GTA6.webp" class="d-block w-100" alt="Preventas Exclusivas GTA VI">
-              </div>
-              <div class="carousel-item">
-              <img src="img/Silksong.webp" class="d-block w-100" alt="Accesorios en Oferta Silksong">
-              </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Siguiente</span>
-          </button>
-          </div>
-      </div>
     </section>
-    
-    <section id="juegos" class="py-4 bg-light">
-      <div class="container">
-          <h2 class="mb-4">Juegos Destacados</h2>
-          <div class="row g-4">
-          <div class="col-md-4">
-              <div class="card h-100 shadow-sm">
-              <img src="img/eldenring.jpg" class="card-img-top" alt="Elden Ring">
-              <div class="card-body">
-                  <h5 class="card-title">Elden Ring</h5>
-                  <p class="card-text">Explora un vasto mundo abierto lleno de desafíos y aventuras.</p>
-                  <a href="#" class="btn btn-primary">Comprar Ahora</a>
-              </div>
+
+    <section id="formulario" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card p-4 shadow-sm">
+                        <h2 class="text-center mb-4">Sugerir un Nuevo Producto</h2>
+                        <form id="productForm">
+                            <div class="mb-3">
+                                <label for="productName" class="form-label">Nombre del Producto</label>
+                                <input type="text" class="form-control" id="productName" required>
+                                <div class="invalid-feedback">
+                                    Por favor, ingresa el nombre del producto.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="productDescription" class="form-label">Descripción</label>
+                                <textarea class="form-control" id="productDescription" rows="3" required></textarea>
+                                <div class="invalid-feedback">
+                                    Por favor, ingresa una descripción.
+                                </div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">Acepto los términos y condiciones</label>
+                                <div class="invalid-feedback">
+                                    Debes aceptar los términos y condiciones.
+                                </div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Registrar Producto</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-      </div>
+        </div>
     </section>
 
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container-fluid">
+            <p class="mb-0">&copy; 2024 Ctrl+Play. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="#" class="text-white me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" class="text-white me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+  </body>
 </html>
