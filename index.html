@@ -10,6 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </head>
 
   <body>
@@ -19,7 +21,7 @@
                   <div class="profile-info">
                       <h1>Ctrl+Play</h1>
                       <h3>Todo en videojuegos y accesorios</h3>
-                      <p>Soy un@ Ingenier@ de Sistemas especializad@ en ...</p>
+                      <p>Donde los sueños cobran vida</p>
                   </div>
                   <div class="social-icons">
                       <a href="" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -48,7 +50,7 @@
                   <a class="nav-link" href="#productos">Productos</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="#productForm">Sugerir Productos</a>
+                  <a class="nav-link" href="#formularioVideojuego">Sugerir Productos</a>
               </li>
           </ul>
         </div>
@@ -365,74 +367,73 @@
           </div>
       </section>
 
-    <form id="productForm" novalidate>
-        <h2 class="text-center mb-4">Sugerir un Nuevo Producto</h2>
-        <p class="lead text-center mb-4">Completa los datos para sugerir un nuevo producto.</p>
-        
-        <!-- Nombre del producto -->
-        <div class="mb-3">
-            <label for="productName" class="form-label">Nombre del Producto</label>
-            <input type="text" class="form-control" id="productName" required>
-            <div class="form-text">Debe tener al menos 3 caracteres.</div>
-            <div class="invalid-feedback text-danger">
-                Por favor, ingresa un nombre válido.
+    <!-- SECCIÓN 3: FORMULARIO DE SUGERENCIA DE PRODUCTOS -->
+    <div class="container mt-5">
+        <div class="card shadow-lg p-4 rounded-4 bg-light">
+        <h2 class="text-center mb-4">🎮 Sugerir Videojuego</h2>
+        <form id="formularioVideojuego" novalidate>
+            
+            <!-- Nombre del juego -->
+            <div class="mb-3">
+            <label for="nombre-juego" class="form-label">Nombre del juego</label>
+            <input type="text" id="nombre-juego" class="form-control" placeholder="Ej: The Legend of Zelda">
+            <div id="errorNombreJuego" class="text-warning small mt-1"></div>
             </div>
-        </div>
 
-        <!-- Descripción -->
-        <div class="mb-3">
-            <label for="productDescription" class="form-label">Descripción</label>
-            <textarea class="form-control" id="productDescription" rows="3" required></textarea>
-            <div class="form-text">Escribe una breve descripción del producto.</div>
-            <div class="invalid-feedback text-danger">
-                La descripción es obligatoria.
+            <!-- Plataforma -->
+            <div class="mb-3">
+            <label for="plataforma" class="form-label">Plataforma</label>
+            <select id="plataforma" class="form-select">
+                <option value="">Seleccione una plataforma</option>
+                <option>PC</option>
+                <option>PlayStation</option>
+                <option>Xbox</option>
+                <option>Nintendo Switch</option>
+                <option>Otro</option>
+            </select>
+            <div id="errorPlataforma" class="text-warning small mt-1"></div>
             </div>
-        </div>
 
-        <!-- Precio -->
-        <div class="mb-3">
-            <label for="productPrice" class="form-label">Precio (COP)</label>
-            <input type="number" class="form-control" id="productPrice" min="100" required>
-            <div class="form-text">Debe ser mayor a $100.</div>
-            <div class="invalid-feedback text-danger">
-                Ingresa un precio válido.
-            </div>
-        </div>
-
-        <!-- Categoría -->
-        <div class="mb-3">
-            <label class="form-label">Categoría</label><br>
+            <!-- Género -->
+            <div class="mb-3">
+            <label class="form-label">Género</label><br>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="juegos" value="juegos" required>
-                <label class="form-check-label" for="juegos">Juegos</label>
+                <input type="radio" id="accion" name="genero" value="Acción" class="form-check-input">
+                <label for="accion" class="form-check-label">Acción</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="consolas" value="consolas" required>
-                <label class="form-check-label" for="consolas">Consolas</label>
+                <input type="radio" id="aventura" name="genero" value="Aventura" class="form-check-input">
+                <label for="aventura" class="form-check-label">Aventura</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="category" id="accesorios" value="accesorios" required>
-                <label class="form-check-label" for="accesorios">Accesorios</label>
+                <input type="radio" id="rpg" name="genero" value="RPG" class="form-check-input">
+                <label for="rpg" class="form-check-label">RPG</label>
             </div>
-            <div class="invalid-feedback text-danger d-block">
-                Selecciona una categoría.
+            <div class="form-check form-check-inline">
+                <input type="radio" id="deportes" name="genero" value="Deportes" class="form-check-input">
+                <label for="deportes" class="form-check-label">Deportes</label>
             </div>
-        </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" id="otro" name="genero" value="Otro" class="form-check-input">
+                <label for="deportes" class="form-check-label">Otro</label>
+            </div>
+            <div id="errorGenero" class="text-warning small mt-1"></div>
+            </div>
 
-        <!-- Aceptar términos -->
-        <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="terms" required>
-            <label class="form-check-label" for="terms">Acepto los términos y condiciones</label>
-            <div class="invalid-feedback text-danger">
-                Debes aceptar los términos.
+            <!-- Correo de sugerencia -->
+            <div class="mb-3">
+            <label for="correo" class="form-label">Correo electrónico</label>
+            <input type="email" id="correo" class="form-control" placeholder="tuemail@correo.com">
+            <div id="errorCorreo" class="text-warning small mt-1"></div>
             </div>
-        </div>
 
-        <!-- Botón -->
-        <div class="d-flex justify-content-start">
-            <button type="submit" class="btn btn-primary">Registrar Producto</button>
+            <!-- Botón -->
+            <div class="text-center">
+            <button type="submit" class="btn btn-success px-4">Sugerir</button>
+            </div>
+        </form>
         </div>
-    </form>
+    </div>
 
     <footer class="bg-dark text-white text-center py-3">
         <div class="container-fluid">
@@ -444,6 +445,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="validaciones.js"></script>
   </body>
 </html>
